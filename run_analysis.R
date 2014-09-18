@@ -1,5 +1,8 @@
 ## Coursera Getting and Cleaning Data Class Project
 
+library(dplyr)
+library(tidyr)
+
 ## Download and unzip the file
 
 ## Read feature names
@@ -20,19 +23,26 @@ mergeFiles <- function(subjectFilename, xFilename, yFilename) {
     yFile <- read.table(yFileName)
     
     if (nrow(subjectFile) != nrow(xFile) | nrow(xFile) != nrow(yFile)) {
-        stop("input files have differen row counts")
+        stop("input files have different row counts")
     }
     
-    allCols <- cbind(subjectFile, yFile, xFile)
+    
+    
+    allCols <- tbl_df(cbind(subjectFile, yFile, xFile))
 }
 
 testFile <- mergeFiles( "./OriginalData/test/subject_test.txt",
                         "./OriginalData/test/X_test.txt",
                         "./OriginalData/test/Y_test.txt")
 
-print(nrow(testFile))
+trainFile <- mergeFiles( "./OriginalData/train/subject_test.txt",
+                         "./OriginalData/train/X_test.txt",
+                         "./OriginalData/train/Y_test.txt")
 
 ## Extract only the measurements on the mean and standard deviation for each measurement. 
+## Get just the mean & std columns with select()
+
+
 ## Uses descriptive activity names to name the activities in the data set
 ## Appropriately labels the data set with descriptive variable names. 
 ## From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
