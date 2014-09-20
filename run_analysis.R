@@ -16,10 +16,6 @@ featureFile <- paste(dirName, "features.txt", sep="/")
 features <- read.table(featureFile)
 colnames(features) <- c("number", "name")
 
-## Read activity labels
-activities <- read.table(activityNameFile)
-colnames(activities) <- c("number", "Activity")
-
 ## Only columns with -mean or -std in the name.
 desiredColumns <- subset(features, 
                          grepl("mean()", name, fixed=TRUE) | grepl("std()", name))
@@ -39,6 +35,10 @@ colnames(values) <- desiredColumns$name
 
 ## Combine test and train activity types (numbered)
 activityByNumber <- rbind(read.table(trainActFile), read.table(testActFile))
+
+## Read activity labels
+activities <- read.table(activityNameFile)
+colnames(activities) <- c("number", "Activity")
 
 ## Convert to descriptive labels
 colnames(activityByNumber) <- "number" #Common column name to join on
