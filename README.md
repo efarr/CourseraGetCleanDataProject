@@ -17,9 +17,8 @@ You should create one R script called run_analysis.R that does the following.
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Files:
----
-CodeBook.md: Description of data and process of clean-up and aggregation.
-run_analysis.R: Script for transforming raw data into single, tidy data set.
-means_by_subj_and_activivity.txt: Tidy CSV with the average of each variable for each activity and each subject.
----
+| File        | Description  
+|------------|------------------
+| CodeBook.md | Description of data and process of clean-up and aggregation.
+| run_analysis.R | Script for transforming raw data into single, tidy data set.
+| means_by_subj_and_activivity.txt | Tidy CSV with the average of each variable for each activity and each subject.
