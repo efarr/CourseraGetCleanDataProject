@@ -42,23 +42,23 @@ Tidy up feature names by:
 * removing the 't' prefix
 * converting the 'f' prefix to 'Freq_'
 
-Test and training data sets were combined into a single set.
+Combine test and training data into a single data frame.
 
-Features related to mean and std were selected from the complete dataset using the filtered version of *features.txt* from above.
+Select features related to mean and std from the complete data frame using the filtered version of *features.txt* from above.
 
-The meaningful feature names created earlier were applied to our data frame.  
+Apply the meaningful feature names created earlier to our data frame.  
 
-Activity descriptions were read from *activity_labels.txt*.
+Read activity descriptions from *activity_labels.txt*.
 
-Combined numeric activity labels from the training and test data.
+Combine numeric activity labels from the training and test data.
 
-Joined the numeric labels and the descriptive labels, then selected only the descriptive labels.
+Join the numeric labels and the descriptive labels, then select only the descriptive labels.
 
 Combined the Subject data (from train and test) with the descriptive activity data and the feature data. 
 
-Aggregated feature data into averages for each subject for each activity.
+Aggregate feature data into averages for each subject for each activity.
 
-The resulting data was written a file called *means_by_subj_and_activivity.txt*. 
+Write the resulting data to a file called *means_by_subj_and_activivity.txt*. 
 
 (See *run_analysis.R* for details of operations. Script requires the dplyr 0.2 package to be installed.
 
