@@ -55,4 +55,4 @@ final <- cbind(subject, activity, values) %.%
     summarise_each(funs(mean))
 
 #Write final, tidy file
-write.csv(final, "means_by_subj_and_activivity.txt", row.names=FALSE)
+write.table(final, "means_by_subj_and_activivity.txt", row.names=FALSE)
